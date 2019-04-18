@@ -3,7 +3,6 @@ applications:
 - name: HelloWorldSpringBoot
   path: target/HelloWorldSpringBoot-0.0.1-SNAPSHOT.jar
   random-route: true
-buildpack: java_buildpack
 env: 
   ROSTER_A: Value_1
 instances: 1
