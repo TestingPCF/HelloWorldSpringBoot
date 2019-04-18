@@ -8,6 +8,6 @@ public class HelloWorldController {
 
 	@RequestMapping(value="/")
 	public String hello() {
-		return "HCL PCF Jenkins Demo - using GitHub test";
+		return "HCL PCF Jenkins Demo - using GitHub test-4:00 pm";
 	}
 }
