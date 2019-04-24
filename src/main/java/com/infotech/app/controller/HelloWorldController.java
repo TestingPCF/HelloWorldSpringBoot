@@ -10,21 +10,22 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class HelloWorldController {
 	static Logger LOGGER = LoggerFactory.getLogger(HelloWorldController.class);
-	
+	private static int count=0;
 	@RequestMapping(value="/")
 	public String hello() {
-		for (int i = 0; i < 10; i++) {
-			if (i % 2 == 0)
-				LOGGER.info("Logging hello() {even number}", i);
+			if (count % 2 == 0)
+				LOGGER.info("Logging hello() {even number}", count);
 			else
-				LOGGER.debug("Logging hello() {odd number}", i);
-			}
+				LOGGER.info("Logging hello() {odd number}", count);
+			count++;
 		  try{
-			  int data = 10;
-			  LOGGER.info("Logger hello() - ok", data);
-			  int divdata = data/0;
+			 if(count==5) {
+			  LOGGER.info("Logger hello() - ok and reached on top level", count);
+			  int c = count/0;
+			 }
 		  }catch(ArithmeticException aex){
 			  LOGGER.error("Logger hello() - exception");
+			  count=0;
 		  }
 		  
 		return "HCL PCF Jenkins Demo - using GitHub test-23 Apr 2019 12:42 pm";
