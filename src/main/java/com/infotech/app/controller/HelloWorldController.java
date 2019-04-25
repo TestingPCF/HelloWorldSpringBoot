@@ -14,7 +14,7 @@ public class HelloWorldController {
 	@RequestMapping(value="/")
 	public String hello() {
 			if (count % 2 == 0)
-				LOGGER.info("Logging hello() {even number}", count);
+				LOGGER.info("Logging hello 25-april-2019() {even number}", count);
 			else
 				LOGGER.info("Logging hello() {odd number}", count);
 			count++;
