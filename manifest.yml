@@ -1,7 +1,7 @@
 --- 
 applications: 
 - name: HelloWorldSpringBoot
-  path: target/HelloWorldSpringBoot-0.0.1-SNAPSHOT.jar
+  path: target/HelloWorldSpringBoot-0.0.1*.jar
   random-route: true
 env: 
   ROSTER_A: Value_1
