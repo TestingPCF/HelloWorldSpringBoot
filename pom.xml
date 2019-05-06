@@ -4,12 +4,12 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.infotech.app</groupId>
 	<artifactId>HelloWorldSpringBoot</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.1-SNAPSHOT.${v}</version>
 	<packaging>jar</packaging>
 	
 	<properties>
 		<java.version>1.8</java.version>
-		<build.number>SNAPSHOT</build.number>
+		
 	</properties>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -44,45 +44,27 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 		</plugin>
 		     <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-dependency-plugin</artifactId>
-        <version>3.1.1</version>
-        <executions>
-          <execution>
-            <id>unpack-newrelic</id>
-            <phase>package</phase>
-            <goals>
-              <goal>unpack-dependencies</goal>
-            </goals>
-            <configuration>
-              <includeGroupIds>com.newrelic.agent.java</includeGroupIds>
-              <includeArtifactIds>newrelic-java</includeArtifactIds>
-              <overWriteReleases>false</overWriteReleases>
-              <overWriteSnapshots>false</overWriteSnapshots>
-              <overWriteIfNewer>true</overWriteIfNewer>
-              <outputDirectory>${project.build.directory}</outputDirectory>
-            </configuration>
-          </execution>
-        </executions>
-		
-		<plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-jar-plugin</artifactId>
-            <configuration>
-                <manifest>
-                    <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
-                </manifest>
-                <archive>
-                    <manifestEntries>
-                        <Specification-Title>${project.name}</Specification-Title>
-                        <Specification-Version>${project.version}</Specification-Version>
-                        <Implementation-Version>${build.number}</Implementation-Version>
-                    </manifestEntries>
-                </archive>
-            </configuration>
-        </plugin>
-		
-      </plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-dependency-plugin</artifactId>
+				<version>3.1.1</version>
+				<executions>
+					  <execution>
+						<id>unpack-newrelic</id>
+						<phase>package</phase>
+						<goals>
+						  <goal>unpack-dependencies</goal>
+						</goals>
+						<configuration>
+						  <includeGroupIds>com.newrelic.agent.java</includeGroupIds>
+						  <includeArtifactIds>newrelic-java</includeArtifactIds>
+						  <overWriteReleases>false</overWriteReleases>
+						  <overWriteSnapshots>false</overWriteSnapshots>
+						  <overWriteIfNewer>true</overWriteIfNewer>
+						  <outputDirectory>${project.build.directory}</outputDirectory>
+						</configuration>
+					  </execution>
+				</executions>
+	      </plugin>
 		</plugins>
 	</build>
 </project>
