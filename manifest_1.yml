@@ -1,0 +1,13 @@
+--- 
+applications: 
+- name: HelloWorldSpringBoot
+  path: /target
+  random-route: true
+env: 
+  ROSTER_A: Value_1
+instances: 1
+memory: 750M
+services:
+ - log-drain
+ - app-monitoring
+buildpack: https://github.com/cloudfoundry/java-buildpack.git 

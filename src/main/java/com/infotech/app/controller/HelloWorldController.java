@@ -28,6 +28,6 @@ public class HelloWorldController {
 			  count=0;
 		  }
 		  
-		return "HCL PCF Jenkins Demo - using GitHub test-23 Apr 2019 12:42 pm";
+		return "HCL PCF Jenkins Demo - using GitHub test-06 May 2019 14:42 pm";
 	}
 }
